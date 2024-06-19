@@ -1,0 +1,124 @@
+{
+  "settings": {
+    "name": "Site 2024-06-15 12:57",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.4,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.18",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "uniqCompNum": 6,
+    "versionPublish": "5.9.18",
+    "imageResize": true
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "WienerAi® | Official Site | Home",
+        "meta_descr": "Wiener AI ($WAI) is a cryptocurrency project that aims to capture the fun and excitement of meme coins while leveraging artificial intelligence to provide real utility.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-content-text": {
+              "@media (max-width: 767px)": {
+                "padding": "0 1.5rem 1.5rem 1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "0 2.25rem 2.25rem 2.25rem"
+              },
+              "@media (min-width: 992px)": {
+                "padding": "1rem 4rem 4rem 4rem"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article08",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article8\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"10\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <div class=\"image-wrapper d-flex justify-content-center mb-4\">\n            <img mbr-if=\"showImage\" src=\"@PROJECT_PATH@/assets/images/47694.webp\" alt=\"wienerAI\">\n          </div>\n          <div class=\"card-content-text\">\n            <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>WienerAi® | Official Site | Home</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\"><b>WienerAI Token ($WAI) – A Beginner’s Guide</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><a href=\"https://wieners-ai.github.io/\" class=\"text-primary\">Wiener AI</a> ($WAI) is a cryptocurrency project that aims to capture the fun and excitement of meme coins while leveraging artificial intelligence to provide real utility. Inspired by the success of Dogecoin, Wiener AI introduces a unique blend of charm and technology, targeting a wide range of crypto enthusiasts and investors.<br><br><b>Wiener AI stands out in the crowded meme coin market thanks to its innovative features:\n</b><br>\n<br>- AI Integration: Wiener AI uses advanced AI algorithms to optimize trading strategies and predict market trends, offering investors a potential edge in the volatile crypto market.<br>\n<br>- Community Engagement: The Wiener AI community is active and vibrant, with frequent events, contests, and social media interactions that keep the community engaged and growing.<br>\n<br>- Charity Initiatives: A portion of $WAI transactions is dedicated to animal shelters and dachshund rescue organizations, adding a philanthropic element to the coin.<br><br><b>Wiener AI vs. Dogecoin – A Comparative Analysis\n</b><br><br><a href=\"https://wienerdog.ai/\" class=\"text-primary\">Wiener AI</a> unique blend of AI technology and meme coin culture positions it for significant growth. The integration of AI offers potential utility beyond what traditional meme coins provide, attracting investors looking for innovative solutions in the crypto market. Additionally, Wiener AI’s focus on community engagement and charity initiatives strengthens its appeal to a socially conscious audience.\n<br>\n<br>WienerAI is an initiative that combines two popular trends, AI and memes, driven by enthusiasm and a fear of losing out. Investors are already paying close attention to this combo. After its initial presale, $WAI aims to establish an engaged audience committed to ongoing interaction.<b><br></b><br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>WienerAI price forecast 2024, 2025, 2030</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">2024: We predict WienerAI could be nearly 10x from its presale price, reaching $0.0055 after launch.<br><br>\n2025: We think WienerAI will grow further in 2025 as it launches its AI trading bot. The token could reach a price of $0.0090.\n<br>\n<br>2030: WienerAI has strong long-term potential and could trade around $0.0175 by the end of the decade.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>WienerAI price prediction for 2024</b><b><br></b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">The WienerAI ICO is off to an incredible start, and there are still several presale rounds left before the $WAI token launches on exchanges. With demand building, we predict $WAI could witness explosive price gains when trading begins and hit a high of $0.0055 within days of launching.\n<br>\n<br>The token may not be able to hold this price initially, but we don’t think $WAI will experience the same sharp price decline as many other meme coins. That’s thanks to the token’s planned utility and impressive staking rewards (currently 324% APY), which offer value for users who hang onto their $WAI tokens.<br><br><b>WienerAI price analysis 2026-2030</b><br><br>Looking to 2026 and beyond, we think WienerAI will continue to gain value. The token’s staking rewards and AI-powered trading bot are powerful incentives for token holders to remain engaged with the project and hold onto their $WAI even as the price increases.\n<br>\n<br>On top of that, WienerAI could roll out new developments as AI technology advances. This would deliver even more value for $WAI token holders and further increase demand for the token.<br>\n<br>As a meme coin, it’s likely that $WAI’s price will fluctuate significantly during this period with ups and downs in the broader market. However, we predict the trend will be net upward, ultimately resulting in a price of around $0.0175 by the end of the decade.<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>How to buy WienerAI</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">The WienerAI presale is going on now, enabling anyone to buy $WAI at a discounted price of just $0.000711. However, the next price increase is just 36 hours away, so there’s no time to wait.<br><b><br>Here’s how to buy $WAI today.</b><br><br><b>Step 1: Buy ETH or USDT\n</b><br>Purchase ETH or USDT from any major crypto exchange. You can also buy $WAI using BNB, but you won’t qualify for staking rewards.\n<br>\n<br><b>Step 2: Transfer to Crypto Wallet\n</b><br>Set up a self-custody crypto wallet, like MetaMask, and transfer your ETH or USDT to it.\n<br>\n<br><b>Step 3: Connect to WienerAI Presale\n</b><br>Head to the WienerAI presale site and click ‘Connect Wallet.’ Follow the prompts to authorise the connection.\n<br>\n<br><b>Step 4: Buy WienerAI\n</b><br>Enter the amount of ETH or USDT to swap for $WAI. When ready, click ‘Buy $WAI.’ You can claim your purchased tokens when the presale ends.<br><br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\"><b>Conclusion</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">WienerAI is a meme coin featuring a sausage dog/AI hybrid. It aims to dominate the meme coin space through staking rewards and building a strong community.&nbsp;<br></p>\n              </div>\n            </div>\n\n            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n              <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n            </div>\n          </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "ufKKpn0XjL",
+          "_anchor": "article08-5",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
